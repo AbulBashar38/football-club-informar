@@ -1,0 +1,21 @@
+.img-container img {
+    width: 100%;
+    opacity: 50%;
+}
+
+.img-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+.card-container{
+    background-color: #2ca58d;
+}
