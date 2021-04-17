@@ -9,6 +9,7 @@ import './TeamDetails.css';
 import facebook from '../../images/facebook-512.png';
 import twitter from '../../images/new2-27646_twitter-logo-png-transparent-background-logo-twitter-png.png';
 import youTube from '../../images/free-youtube-logo-icon-2431-thumb.png'
+import backgroundPic from '../../images/football-stadium-green-strips-lawn-web-header.jpg' 
 const TeamDetails = () => {
     const { teamId } = useParams()
     const [teamDetails, setTeamDetails] = useState({})
@@ -17,13 +18,14 @@ const TeamDetails = () => {
             .then(res => res.json())
             .then(data => setTeamDetails(data.teams[0]))
     }, [teamId])
-    
-    const { strGender, strDescriptionEN, strTeamBanner, strAlternate, strCountry, intFormedYear,strStadiumDescription } = teamDetails;
+    console.log(teamDetails);
+    const { strGender, strDescriptionEN, strTeamBadge, strAlternate, strCountry, intFormedYear,strStadiumDescription } = teamDetails;
     const showImg = strGender === 'Male' ? boysPic : girlsPic;
     return (
         <div className='details-container'>
             <div>
-                <img style={{ width: '100%' }} src={strTeamBanner} alt='' />
+                <img style={{position:'relative', width: '100%',opacity:'0.5' }} src={backgroundPic} alt='' />
+                <img style={{position:'absolute',top:'4vw',left:'40vw', width:'20vw'}} src={strTeamBadge} alt=''></img>
             </div>
             <Container>
                 <Row className='clubInfo'>
